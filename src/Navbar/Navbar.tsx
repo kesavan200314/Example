@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-scroll"; // Correctly import Link
-import logo from "../assets/logo.png";
-import "./App.css"
+import React, { useState, useEffect } from 'react'; // Import useState and useEffect
+import { Link } from 'react-scroll'; 
+import logo from "../assets/logo.png"; 
+
 
 function Navbar() {
   const [nav, setNav] = useState(false);
@@ -14,9 +14,11 @@ function Navbar() {
     }
   };
 
-  // Properly add event listener
   useEffect(() => {
+    // Add event listener for scroll
     window.addEventListener("scroll", changeBackground);
+
+    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("scroll", changeBackground);
     };

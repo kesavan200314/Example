@@ -32,7 +32,8 @@ input{
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('./images/banner.png');
+    /* background-image: url('./images/banner.png'); */
+    
     position: relative;
     z-index: 0;
 }
@@ -604,3 +605,84 @@ nav .menu-btn,
                 height:400px;
             }
         }
+
+        /* new */
+        #main {
+            width: 100%;
+            height: 768px;
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('/src/images/banner.png');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 0;
+        }
+        
+        #main::before {
+            position: absolute;
+            content: "";
+            background: radial-gradient(ellipse at center, rgba(181, 8, 8, 0.38) 0%, rgba(0, 0, 0, 0.6) 100%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .header-heading {
+            color: white;
+            z-index: 1;
+        }
+        
+        .header-heading h1 {
+            font-size: 5rem;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        
+        .header-heading h2 {
+            font-size: 2.7rem;
+            margin: 0;
+        }
+        
+        .header-heading span {
+            color: #FF1414;
+        }
+        
+        /* Responsiveness */
+        @media(max-width: 1190px) {
+            #main {
+                background-size: 1150px !important;
+            }
+            .header-heading h1 {
+                font-size: 3rem;
+            }
+            .header-heading h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media(max-width: 970px) {
+            #main {
+                height: 650px;
+            }
+            .header-heading h1 {
+                font-size: 3rem;
+            }
+            .header-heading h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media(max-width: 600px) {
+            .header-heading h1 {
+                font-size: 2.5rem;
+            }
+            .header-heading h2 {
+                font-size: 1.2rem;
+            }
+        }
+        
